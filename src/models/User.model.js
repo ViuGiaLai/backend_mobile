@@ -29,27 +29,66 @@ const UserSchema = new mongoose.Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  isActive: {
+    type: Boolean,
+    default: true
+  },
+  lastLogin: {
+    type: Date
+  },
+  loginAttempts: {
+    type: Number,
+    default: 0
+  },
+  lockUntil: {
+    type: Date
+  },
   createdAt: {
     type: Date,
     default: Date.now
   }
+}, {
+  timestamps: true
 });
 
-// Encrypt password using bcrypt
-UserSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) {
-    next();
-  }
+// Check if user account is active
+UserSchema.methods.isAccountActive = function() {
+  return this.isActive !== false;
+};
 
+// Hash password before saving (to be called explicitly)
+UserSchema.methods.hashPassword = async function() {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-});
+  return this;
+};
 
 // Sign JWT and return
-UserSchema.methods.getSignedJwtToken = function() {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE
-  });
+UserSchema.methods.getSignedJwtToken = async function() {
+  try {
+    // Update last login time and reset login attempts
+    this.lastLogin = Date.now();
+    this.loginAttempts = 0;
+    
+    // Save the user document
+    await this.save({ validateBeforeSave: false });
+    
+    // Generate JWT token
+    return jwt.sign(
+      { 
+        id: this._id,
+        role: this.role,
+        isActive: this.isActive !== false
+      }, 
+      process.env.JWT_SECRET || 'default-secret-key', 
+      { 
+        expiresIn: process.env.JWT_EXPIRE || '30d'
+      }
+    );
+  } catch (error) {
+    console.error('JWT Token Error:', error);
+    throw new Error('Failed to generate authentication token');
+  }
 };
 
 // Match user entered password to hashed password in database

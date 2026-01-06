@@ -1,0 +1,77 @@
+2026-01-06 07:11:53 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:13:34 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:14:04 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:14:18 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:15:12 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:08 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:21 [[31merror[39m]: Error: Email đã được sử dụng
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:50:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  "url": "/api/v1/auth/register",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:37 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:21:32 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:06 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:10 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:55 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:24:54 [[31merror[39m]: Login error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:55:5)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:5)"
+}
+2026-01-06 07:25:50 [[31merror[39m]: Login error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:56:12)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:5)"
+}
+2026-01-06 07:26:45 [[31merror[39m]: Token generation error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:55:5)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async UserSchema.methods.getSignedJwtToken (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:75:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:21)"
+}
+2026-01-06 07:27:23 [[31merror[39m]: Token generation error: {
+  "error": "Failed to generate authentication token",
+  "stack": "Error: Failed to generate authentication token\n    at UserSchema.methods.getSignedJwtToken (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:106:11)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:21)"
+}

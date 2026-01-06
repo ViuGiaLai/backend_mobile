@@ -1,0 +1,528 @@
+2026-01-06 07:11:03 [[32minfo[39m]: POST /api/v1/auth/register {
+  "body": {
+    "name": "Rmah Viu",
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "10e4d5b9-b7bc-4d9e-872d-1f399ed7675b",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "89"
+  }
+}
+2026-01-06 07:11:03 [[32minfo[39m]: Register request received {
+  "body": {
+    "name": "Rmah Viu",
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  }
+}
+2026-01-06 07:11:04 [[32minfo[39m]: User registered successfully {
+  "userId": "695c5317cefe2672581126f6"
+}
+2026-01-06 07:11:52 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "c3a2d712-6de3-42df-a2cc-add123dbe5a2",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:11:53 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:11:53 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:13:34 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "3a9010bd-62d4-4ec1-bbf8-4a9465f726a8",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:13:34 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:13:34 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:14:03 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "6c3c78a8-3bbd-4606-9992-8abceb4b1451",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:14:03 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:14:04 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:14:18 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "13e1aba7-8a85-464d-9c2a-a5a7d7ae73ff",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:14:18 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:14:18 [[31merror[39m]: Error: Không có quyền truy cập
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:99:17 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:15:12 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "8457ecf8-6b4a-4563-b040-f7cad965a44d",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:15:12 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:15:12 [[33mwarn[39m]: Login failed - User not active {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:15:12 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:08 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "d15e196c-2a27-477a-a947-bf03a1f8243a",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:16:08 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:16:08 [[33mwarn[39m]: Login failed - User not active {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:16:08 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:20 [[32minfo[39m]: POST /api/v1/auth/register {
+  "body": {
+    "name": "Rmah Viu",
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "405bbfc4-e505-43f9-be38-2d5a79007dbd",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "94",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:16:20 [[32minfo[39m]: Register request received {
+  "body": {
+    "name": "Rmah Viu",
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  }
+}
+2026-01-06 07:16:21 [[33mwarn[39m]: Registration failed - User already exists {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:16:21 [[31merror[39m]: Error: Email đã được sử dụng
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:50:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  "url": "/api/v1/auth/register",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:16:37 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "3ba1d534-1888-42f4-9fbb-17defa72f4aa",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:16:37 [[32minfo[39m]: Login attempt {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:16:37 [[33mwarn[39m]: Login failed - User not active {
+  "email": "viu106018@donga.edu.vn"
+}
+2026-01-06 07:16:37 [[31merror[39m]: Error: Tài khoản của bạn đã bị khóa
+    at D:\LEARN_FLUTTER\backend_api\src\controllers\auth.controller.js:103:19 {
+  "url": "/api/v1/auth/login",
+  "method": "POST",
+  "ip": "::1"
+}
+2026-01-06 07:18:00 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "3a3aa80b-db78-487e-8429-021825332a30",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsImlhdCI6MTc2NzY1ODI2NCwiZXhwIjoxNzcwMjUwMjY0fQ.UeDFeZL0KXhrbJVp669bGO-rIzh_-n3w1GDuwoO4gW0"
+  }
+}
+2026-01-06 07:18:22 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "37606530-ab2d-4b45-a784-5d2eb530f238",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODY4MSwiZXhwIjoxNzcwMjUwNjgxfQ.ITUmi1AmA6BRlzsxB12kenDIelKNuqqGzj-P9RAMCXY"
+  }
+}
+2026-01-06 07:20:17 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "60144222-8326-4e0d-bf7e-27b3b9032154",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODcwMywiZXhwIjoxNzcwMjUwNzAzfQ.UvOfJI2Psftxl36ntpXfEYlq1yS6fQOa1exYV0jaOtk"
+  }
+}
+2026-01-06 07:21:31 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "bec1c246-925f-46e6-a00d-80b2976b4524",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:21:32 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:06 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "661c6867-63d5-456a-abb2-6a6c59267690",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:23:06 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:09 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "f45f23f6-9a84-401c-94f2-b918b7512817",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:23:10 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:23:55 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "6babad2e-f1a4-4590-ad9b-3f78e3357798",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:23:55 [[31merror[39m]: Login error: {
+  "error": "next is not a function"
+}
+2026-01-06 07:24:54 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "e943ab44-a775-4ae2-8280-f214f3213ce2",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:24:54 [[31merror[39m]: Login error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:55:5)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:5)"
+}
+2026-01-06 07:25:49 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "b40a6146-3669-40f1-bb8b-c65d7ce49b83",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:25:50 [[31merror[39m]: Login error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:56:12)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:5)"
+}
+2026-01-06 07:26:45 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "640b7e86-6c84-4881-adfe-5a980cdbde59",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:26:45 [[31merror[39m]: Token generation error: {
+  "error": "next is not a function",
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:55:5)\n    at Kareem.execPre (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\kareem\\index.js:63:39)\n    at async model.$__save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\LEARN_FLUTTER\\backend_api\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async UserSchema.methods.getSignedJwtToken (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:75:5)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:21)"
+}
+2026-01-06 07:27:23 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "a07bbaa7-504e-42da-95b5-80379f1fccb8",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:27:23 [[31merror[39m]: Token generation error: {
+  "error": "Failed to generate authentication token",
+  "stack": "Error: Failed to generate authentication token\n    at UserSchema.methods.getSignedJwtToken (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:106:11)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:21)"
+}

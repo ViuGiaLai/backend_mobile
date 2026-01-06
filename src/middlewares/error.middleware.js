@@ -50,15 +50,41 @@ const errorHandler = (err, req, res, next) => {
   }
   
   // Handle errors from Joi or other validation libraries
-  if (err.details) {
-    // Joi validation error
-    const message = 'Validation error';
-    const errors = {};
-    err.details.forEach(({ path, message: msg }) => {
-      errors[path] = msg;
+ // In the error handling section where we handle Joi validation errors
+if (err.details) {
+  const message = 'Validation error';
+  const errors = {};
+
+  // Handle different types of error details
+  if (Array.isArray(err.details)) {
+    // Handle Joi validation errors (array of errors)
+    err.details.forEach((detail) => {
+      const path = detail.path ? (Array.isArray(detail.path) ? detail.path[0] : detail.path) : 'unknown';
+      errors[path] = detail.message || 'Validation error';
     });
-    error = new ErrorResponse(message, 400, errors);
+  } else if (typeof err.details === 'object' && err.details !== null) {
+    // Handle Mongoose validation errors (object with error messages)
+    Object.entries(err.details).forEach(([key, value]) => {
+      if (value && value.message) {
+        errors[key] = value.message;
+      } else if (typeof value === 'string') {
+        errors[key] = value;
+      } else {
+        errors[key] = 'Validation error';
+      }
+    });
+  } else if (typeof err.details === 'string') {
+    // Handle simple string error details
+    errors.general = err.details;
   }
+
+  // If we still don't have any errors, but there's a message, use that
+  if (Object.keys(errors).length === 0 && err.message) {
+    errors.general = err.message;
+  }
+
+  error = new ErrorResponse(message, 400, errors);
+}
   
   // Default to 500 server error
   if (!error.statusCode) {
