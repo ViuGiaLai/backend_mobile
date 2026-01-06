@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const errorHandler = require('./middlewares/error.middleware');
 const asyncHandler = require('./middlewares/async.middleware');
+const logger = require('./utils/logger');
 
 // Route files
 const authRoutes = require('./routes/auth.routes');
@@ -15,7 +16,8 @@ const packageRoutes = require('./routes/package.routes');
 const app = express();
 
 // Body parser
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 // Dev logging
 if (process.env.NODE_ENV === 'development') {
@@ -24,7 +26,23 @@ if (process.env.NODE_ENV === 'development') {
 
 // Security & CORS
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
+// Logging middleware
+app.use((req, res, next) => {
+  logger.info(`${req.method} ${req.originalUrl}`, {
+    body: req.body,
+    query: req.query,
+    params: req.params,
+    headers: req.headers
+  });
+  next();
+});
 
 // ROOT ROUTE
 app.get('/', (_, res) => {
