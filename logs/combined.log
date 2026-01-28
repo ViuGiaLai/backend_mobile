@@ -526,3 +526,57 @@
   "error": "Failed to generate authentication token",
   "stack": "Error: Failed to generate authentication token\n    at UserSchema.methods.getSignedJwtToken (D:\\LEARN_FLUTTER\\backend_api\\src\\models\\User.model.js:106:11)\n    at async exports.login (D:\\LEARN_FLUTTER\\backend_api\\src\\controllers\\auth.controller.js:121:21)"
 }
+2026-01-06 07:28:26 [[32minfo[39m]: POST /api/v1/auth/login {
+  "body": {
+    "email": "viu106018@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "dc7ebace-a065-4c02-b074-eff03cb123cb",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "71",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:28:26 [[32minfo[39m]: Login successful {
+  "userId": "695c5317cefe2672581126f6"
+}
+2026-01-06 07:28:57 [[32minfo[39m]: POST /api/v1/auth/register {
+  "body": {
+    "name": "test",
+    "email": "test@donga.edu.vn",
+    "password": "123456"
+  },
+  "query": {},
+  "params": {},
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.51.0",
+    "accept": "*/*",
+    "cache-control": "no-cache",
+    "postman-token": "550d86e3-32dd-4602-8429-e1715d39aa5b",
+    "host": "localhost:5000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "85",
+    "cookie": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NWM1MzE3Y2VmZTI2NzI1ODExMjZmNiIsInJvbGUiOiJ1c2VyIiwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTc2NzY1ODgxNywiZXhwIjoxNzcwMjUwODE3fQ.x7Vx3YizQ9vyTSje3Hvx-500biEW1QsnomVZxr6LPjg"
+  }
+}
+2026-01-06 07:28:57 [[32minfo[39m]: Register request received {
+  "body": {
+    "name": "test",
+    "email": "test@donga.edu.vn",
+    "password": "123456"
+  }
+}
+2026-01-06 07:28:57 [[32minfo[39m]: User registered successfully {
+  "userId": "695c5749753f5eafff7bc1a3"
+}

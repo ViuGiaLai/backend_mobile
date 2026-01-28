@@ -3,9 +3,17 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
-  name: {
+  firstName: {
     type: String,
-    required: [true, 'Please add a name']
+    required: [true, 'Please add a first name']
+  },
+  lastName: {
+    type: String,
+    required: [true, 'Please add a last name']
+  },
+  country: {
+    type: String,
+    required: [true, 'Please add a country']
   },
   email: {
     type: String,
@@ -56,7 +64,7 @@ UserSchema.methods.isAccountActive = function() {
   return this.isActive !== false;
 };
 
-// Hash password before saving (to be called explicitly)
+// Hash password before saving
 UserSchema.methods.hashPassword = async function() {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
@@ -66,14 +74,10 @@ UserSchema.methods.hashPassword = async function() {
 // Sign JWT and return
 UserSchema.methods.getSignedJwtToken = async function() {
   try {
-    // Update last login time and reset login attempts
     this.lastLogin = Date.now();
     this.loginAttempts = 0;
-    
-    // Save the user document
     await this.save({ validateBeforeSave: false });
     
-    // Generate JWT token
     return jwt.sign(
       { 
         id: this._id,
@@ -91,7 +95,7 @@ UserSchema.methods.getSignedJwtToken = async function() {
   }
 };
 
-// Match user entered password to hashed password in database
+// Match user entered password to hashed password
 UserSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };

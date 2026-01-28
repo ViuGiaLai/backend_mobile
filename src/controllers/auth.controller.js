@@ -2,22 +2,29 @@
 const User = require('../models/User.model');
 const ErrorResponse = require('../utils/errorResponse');
 const logger = require('../utils/logger');
+const User = require('../models/User.model');
+const ErrorResponse = require('../utils/errorResponse');
+const logger = require('../utils/logger');
 
-// Validation function
+// Validation function updated for new fields
 const validateRegisterInput = (data) => {
-  const { name, email, password } = data;
+  const { firstName, lastName, country, email, password } = data;
   const errors = {};
 
-  if (!name || name.trim().length === 0) {
-    errors.name = 'Tên là bắt buộc';
+  if (!firstName || firstName.trim().length === 0) {
+    errors.firstName = 'First name is required';
   }
-
+  if (!lastName || lastName.trim().length === 0) {
+    errors.lastName = 'Last name is required';
+  }
+  if (!country || country.trim().length === 0) {
+    errors.country = 'Country is required';
+  }
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.email = 'Email không hợp lệ';
+    errors.email = 'Invalid email format';
   }
-
   if (!password || password.length < 6) {
-    errors.password = 'Mật khẩu phải có ít nhất 6 ký tự';
+    errors.password = 'Password must be at least 6 characters';
   }
 
   return {
@@ -39,12 +46,12 @@ exports.register = async (req, res) => {
       logger.warn('Validation failed', { errors });
       return res.status(400).json({
         success: false,
-        message: 'Dữ liệu không hợp lệ',
+        message: 'Invalid data provided',
         errors
       });
     }
 
-    const { name, email, password, role } = req.body;
+    const { firstName, lastName, country, email, password, role } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -52,13 +59,15 @@ exports.register = async (req, res) => {
       logger.warn('Registration failed - Email already in use', { email });
       return res.status(400).json({
         success: false,
-        message: 'Email đã được sử dụng'
+        message: 'Email is already in use'
       });
     }
 
-    // Create user with hashed password
+    // Create user with new fields
     const user = new User({
-      name,
+      firstName,
+      lastName,
+      country,
       email,
       password,
       role: role || 'user'
@@ -70,7 +79,7 @@ exports.register = async (req, res) => {
 
     logger.info('User registered successfully', { userId: user._id });
     
-    // Generate token and send response
+    // Generate token
     const token = await user.getSignedJwtToken();
     
     res.status(201).json({
@@ -78,7 +87,8 @@ exports.register = async (req, res) => {
       token,
       user: {
         id: user._id,
-        name: user.name,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
         role: user.role
       }
@@ -87,7 +97,7 @@ exports.register = async (req, res) => {
     logger.error('Registration error:', { error: err.message, stack: err.stack });
     return res.status(500).json({
       success: false,
-      message: 'Lỗi máy chủ nội bộ',
+      message: 'Internal Server Error',
       error: process.env.NODE_ENV === 'development' ? err.message : undefined
     });
   }
@@ -99,76 +109,54 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
-  // Validate email & password
   if (!email || !password) {
-    logger.warn('Login failed - Missing credentials');
     return res.status(400).json({
       success: false,
-      message: 'Vui lòng cung cấp email và mật khẩu'
+      message: 'Please provide email and password'
     });
   }
 
   try {
-    // Check for user
     const user = await User.findOne({ email }).select('+password');
     if (!user) {
-      logger.warn('Login failed - User not found', { email });
       return res.status(401).json({
         success: false,
-        message: 'Thông tin đăng nhập không chính xác'
+        message: 'Invalid credentials'
       });
     }
 
-    // Check if password matches
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      logger.warn('Login failed - Invalid password', { email });
       return res.status(401).json({
         success: false,
-        message: 'Thông tin đăng nhập không chính xác'
+        message: 'Invalid credentials'
       });
     }
 
-    // Check if user is active
     if (user.isActive === false) {
-      logger.warn('Login failed - Account inactive', { userId: user._id });
       return res.status(403).json({
         success: false,
-        message: 'Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên.'
+        message: 'Account is locked'
       });
     }
 
-    try {
-      // Generate token and update user
-      const token = await user.getSignedJwtToken();
-      
-      logger.info('Login successful', { userId: user._id });
-      
-      // Send response with token and user data
-      res.status(200).json({
-        success: true,
-        token,
-        user: {
-          id: user._id,
-          name: user.name,
-          email: user.email,
-          role: user.role
-        }
-      });
-    } catch (error) {
-      logger.error('Token generation error:', { error: error.message, stack: error.stack });
-      return res.status(500).json({
-        success: false,
-        message: 'Lỗi tạo token xác thực',
-        error: process.env.NODE_ENV === 'development' ? error.message : undefined
-      });
-    }
+    const token = await user.getSignedJwtToken();
+
+    res.status(200).json({
+      success: true,
+      token,
+      user: {
+        id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role
+      }
+    });
   } catch (err) {
-    logger.error('Login error:', { error: err.message, stack: err.stack });
     return res.status(500).json({
       success: false,
-      message: 'Lỗi máy chủ nội bộ',
-      error: process.env.NODE_ENV === 'development' ? err.message : undefined
+      message: 'Internal Server Error'
     });
   }
 };
