@@ -8,6 +8,7 @@ const router = express.Router();
 router.post('/register', register);
 router.post('/login', login);
 router.post('/logout', protect, logout);
+router.post('/forgotpassword', forgotPassword);
 
 // Protected routes
 // Add your protected routes here

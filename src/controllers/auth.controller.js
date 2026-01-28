@@ -2,6 +2,7 @@
 const User = require('../models/User.model');
 const ErrorResponse = require('../utils/errorResponse');
 const logger = require('../utils/logger');
+const crypto = require('crypto'); 
 
 // Validation function updated for new fields
 const validateRegisterInput = (data) => {
