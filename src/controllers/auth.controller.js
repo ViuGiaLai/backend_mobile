@@ -2,9 +2,6 @@
 const User = require('../models/User.model');
 const ErrorResponse = require('../utils/errorResponse');
 const logger = require('../utils/logger');
-const User = require('../models/User.model');
-const ErrorResponse = require('../utils/errorResponse');
-const logger = require('../utils/logger');
 
 // Validation function updated for new fields
 const validateRegisterInput = (data) => {
