@@ -158,6 +158,54 @@ exports.login = async (req, res) => {
   }
 };
 
+// @desc    Forgot password
+// @route   POST /api/v1/auth/forgotpassword
+// @access  Public
+exports.forgotPassword = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: 'There is no user with that email'
+      });
+    }
+
+    // 1. Tạo reset token (sử dụng crypto)
+    const resetToken = crypto.randomBytes(20).toString('hex');
+
+    // 2. Hash và lưu vào database
+    user.resetPasswordToken = crypto
+      .createHash('sha256')
+      .update(resetToken)
+      .digest('hex');
+
+    // 3. Set thời gian hết hạn (ví dụ: 10 phút)
+    user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;
+
+    await user.save({ validateBeforeSave: false });
+
+    // 4. Ở đây bạn sẽ tích hợp gửi Email thực tế (Nodemailer)
+    // Ví dụ: await sendEmail({ email: user.email, subject: 'Password reset', message: resetToken });
+    
+    logger.info(`Password reset token generated for: ${email}`);
+
+    res.status(200).json({
+      success: true,
+      message: 'Email sent'
+    });
+  } catch (err) {
+    logger.error('Forgot password error:', err);
+    res.status(500).json({
+      success: false,
+      message: 'Email could not be sent'
+    });
+  }
+};
+
 // @desc    Logout user / clear cookie
 // @route   POST /api/v1/auth/logout
 // @access  Private
