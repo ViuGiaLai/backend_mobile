@@ -49,7 +49,7 @@ exports.register = async (req, res) => {
       });
     }
 
-    const { firstName, lastName, country, email, password, role } = req.body;
+    const { firstName, lastName, country, email, password, role, phoneNumber, city } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -62,23 +62,21 @@ exports.register = async (req, res) => {
     }
 
     // Create user with new fields
-    const user = new User({
+    const user = await User.create({
       firstName,
       lastName,
       country,
       email,
       password,
-      role: role || 'user'
+      role: role || 'traveler',
+      phoneNumber,
+      city
     });
-
-    // Hash password and save
-    await user.hashPassword();
-    await user.save();
 
     logger.info('User registered successfully', { userId: user._id });
     
     // Generate token
-    const token = await user.getSignedJwtToken();
+    const token = user.getSignedJwtToken();
     
     res.status(201).json({
       success: true,
@@ -138,7 +136,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    const token = await user.getSignedJwtToken();
+    const token = user.getSignedJwtToken();
 
     res.status(200).json({
       success: true,
@@ -189,9 +187,6 @@ exports.forgotPassword = async (req, res) => {
 
     await user.save({ validateBeforeSave: false });
 
-    // 4. Ở đây bạn sẽ tích hợp gửi Email thực tế (Nodemailer)
-    // Ví dụ: await sendEmail({ email: user.email, subject: 'Password reset', message: resetToken });
-    
     logger.info(`Password reset token generated for: ${email}`);
 
     res.status(200).json({
@@ -232,35 +227,4 @@ exports.logout = (req, res) => {
       error: process.env.NODE_ENV === 'development' ? err.message : undefined
     });
   }
-};
-
-// Get token from model, create cookie and send response
-const sendTokenResponse = (user, statusCode, res) => {
-  // Create token
-  const token = user.getSignedJwtToken();
-
-  const options = {
-    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
-    httpOnly: true,
-    sameSite: 'strict',
-    path: '/',
-    secure: process.env.NODE_ENV === 'production'
-  };
-
-  // Remove password from output
-  user.password = undefined;
-
-  res
-    .status(statusCode)
-    .cookie('token', token, options)
-    .json({
-      success: true,
-      token,
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role
-      }
-    });
 };

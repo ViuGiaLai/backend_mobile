@@ -6,15 +6,9 @@ const TripSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  fellow: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: true
-  },
-  status: {
+  destination: {
     type: String,
-    enum: ['pending', 'accepted', 'rejected', 'completed'],
-    default: 'pending'
+    required: [true, 'Please add a destination']
   },
   startDate: {
     type: Date,
@@ -24,13 +18,20 @@ const TripSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  totalPrice: {
+  startTime: String,
+  endTime: String,
+  travelerCount: {
     type: Number,
-    required: true
+    default: 1
   },
-  review: {
-    rating: Number,
-    comment: String
+  maxBudget: {
+    type: Number
+  },
+  requiredLanguages: [String],
+  status: {
+    type: String,
+    enum: ['waiting', 'confirmed', 'completed', 'cancelled'],
+    default: 'waiting'
   },
   createdAt: {
     type: Date,

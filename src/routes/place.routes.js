@@ -1,6 +1,6 @@
 const express = require('express');
-const { getTrips, createTrip } = require('../controllers/trip.controller');
+const { getPlaces, createPlace } = require('../controllers/place.controller');
 const { protect } = require('../middlewares/auth.middleware');
 const router = express.Router();
-router.route('/').get(protect, getTrips).post(protect, createTrip);
+router.route('/').get(getPlaces).post(protect, createPlace);
 module.exports = router;

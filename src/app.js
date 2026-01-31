@@ -3,15 +3,15 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const errorHandler = require('./middlewares/error.middleware');
-const asyncHandler = require('./middlewares/async.middleware');
 const logger = require('./utils/logger');
 
 // Route files
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
-const fellowRoutes = require('./routes/fellow.routes');
 const tripRoutes = require('./routes/trip.routes');
-const packageRoutes = require('./routes/package.routes');
+const tourRoutes = require('./routes/tour.routes');
+const placeRoutes = require('./routes/place.routes');
+const blogRoutes = require('./routes/blog.routes');
 
 const app = express();
 
@@ -35,12 +35,7 @@ app.use(cors({
 
 // Logging middleware
 app.use((req, res, next) => {
-  logger.info(`${req.method} ${req.originalUrl}`, {
-    body: req.body,
-    query: req.query,
-    params: req.params,
-    headers: req.headers
-  });
+  logger.info(`${req.method} ${req.originalUrl}`);
   next();
 });
 
@@ -48,20 +43,18 @@ app.use((req, res, next) => {
 app.get('/', (_, res) => {
   res.json({
     success: true,
-    message: 'API đang chạy',
-    version: '1.0.0'
+    message: 'VIU API is running',
+    version: '1.1.0'
   });
 });
-
-// Static files
-app.use(express.static('src/public'));
 
 // API routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
-app.use('/api/v1/fellows', fellowRoutes);
 app.use('/api/v1/trips', tripRoutes);
-app.use('/api/v1/packages', packageRoutes);
+app.use('/api/v1/tours', tourRoutes);
+app.use('/api/v1/places', placeRoutes);
+app.use('/api/v1/blogs', blogRoutes);
 
 // Error handler
 app.use(errorHandler);

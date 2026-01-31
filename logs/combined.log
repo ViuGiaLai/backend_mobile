@@ -580,3 +580,9 @@
 2026-01-06 07:28:57 [[32minfo[39m]: User registered successfully {
   "userId": "695c5749753f5eafff7bc1a3"
 }
+2026-01-31 21:22:14 [[32minfo[39m]: POST /api/v1/auth/forgotpassword 
+2026-01-31 21:22:15 [[31merror[39m]: Forgot password error: next is not a function {
+  "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\src\\models\\User.model.js:68:5)\n    at Kareem.execPre (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\kareem\\index.js:63:39)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async model.$__save (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.forgotPassword (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\src\\controllers\\auth.controller.js:188:5)"
+}
+2026-01-31 21:31:28 [[32minfo[39m]: GET / 
+2026-01-31 21:31:29 [[32minfo[39m]: GET /favicon.ico 

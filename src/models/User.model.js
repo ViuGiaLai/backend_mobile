@@ -11,10 +11,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add a last name']
   },
-  country: {
-    type: String,
-    required: [true, 'Please add a country']
-  },
   email: {
     type: String,
     required: [true, 'Please add an email'],
@@ -24,31 +20,38 @@ const UserSchema = new mongoose.Schema({
       'Please add a valid email'
     ]
   },
-  role: {
-    type: String,
-    enum: ['user', 'fellow', 'admin'],
-    default: 'user'
-  },
   password: {
     type: String,
     required: [true, 'Please add a password'],
     minlength: 6,
     select: false
   },
-  resetPasswordToken: String,
-  resetPasswordExpire: Date,
+  avatar: {
+    type: String,
+    default: 'no-photo.jpg'
+  },
+  role: {
+    type: String,
+    enum: ['traveler', 'guide', 'admin'],
+    default: 'traveler'
+  },
+  phoneNumber: {
+    type: String
+  },
+  country: {
+    type: String,
+    required: [true, 'Please add a country']
+  },
+  city: {
+    type: String
+  },
   isActive: {
     type: Boolean,
     default: true
   },
+  resetPasswordToken: String,
+  resetPasswordExpire: Date,
   lastLogin: {
-    type: Date
-  },
-  loginAttempts: {
-    type: Number,
-    default: 0
-  },
-  lockUntil: {
     type: Date
   },
   createdAt: {
@@ -59,40 +62,22 @@ const UserSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Check if user account is active
-UserSchema.methods.isAccountActive = function() {
-  return this.isActive !== false;
-};
-
 // Hash password before saving
-UserSchema.methods.hashPassword = async function() {
+UserSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) {
+    next();
+  }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-  return this;
-};
+});
 
 // Sign JWT and return
-UserSchema.methods.getSignedJwtToken = async function() {
-  try {
-    this.lastLogin = Date.now();
-    this.loginAttempts = 0;
-    await this.save({ validateBeforeSave: false });
-    
-    return jwt.sign(
-      { 
-        id: this._id,
-        role: this.role,
-        isActive: this.isActive !== false
-      }, 
-      process.env.JWT_SECRET || 'default-secret-key', 
-      { 
-        expiresIn: process.env.JWT_EXPIRE || '30d'
-      }
-    );
-  } catch (error) {
-    console.error('JWT Token Error:', error);
-    throw new Error('Failed to generate authentication token');
-  }
+UserSchema.methods.getSignedJwtToken = function() {
+  return jwt.sign(
+    { id: this._id, role: this.role },
+    process.env.JWT_SECRET || 'default-secret-key',
+    { expiresIn: process.env.JWT_EXPIRE || '30d' }
+  );
 };
 
 // Match user entered password to hashed password
