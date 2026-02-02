@@ -113,7 +113,7 @@ exports.login = async (req, res) => {
   }
 
   try {
-    const user = await User.findOne({ email }).select('+password');
+    const user = await User.findOne({ email }).select('+password').populate('guideProfile');
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -234,7 +234,7 @@ exports.logout = (req, res) => {
 // @access  Private
 exports.getMe = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user.id).populate('guideProfile');
     res.status(200).json({
       success: true,
       data: user

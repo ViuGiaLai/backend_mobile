@@ -35,34 +35,27 @@ const UserSchema = new mongoose.Schema({
     enum: ['traveler', 'guide', 'admin'],
     default: 'traveler'
   },
-  phoneNumber: {
-    type: String
-  },
-  country: {
-    type: String,
-    required: [true, 'Please add a country']
-  },
-  city: {
-    type: String
-  },
   isActive: {
     type: Boolean,
     default: true
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
-  lastLogin: {
-    type: Date
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
 }, {
-  timestamps: true
+  timestamps: true,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
-// Hash password before saving
+// Virtual field để lấy thông tin GuideProfile liên quan
+UserSchema.virtual('guideProfile', {
+  ref: 'GuideProfile',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: true
+});
+
+// Mã hóa mật khẩu trước khi lưu
 UserSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
     next();
@@ -71,7 +64,7 @@ UserSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-// Sign JWT and return
+// Ký JWT và trả về
 UserSchema.methods.getSignedJwtToken = function() {
   return jwt.sign(
     { id: this._id, role: this.role },
@@ -80,7 +73,7 @@ UserSchema.methods.getSignedJwtToken = function() {
   );
 };
 
-// Match user entered password to hashed password
+// Kiểm tra mật khẩu
 UserSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
