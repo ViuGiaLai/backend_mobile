@@ -15,7 +15,7 @@ exports.getFellows = async (req, res, next) => {
 
     query = FellowProfile.find(reqQuery).populate({
       path: 'user',
-      select: 'name email'
+      select: 'firstName lastName email avatar'
     });
 
     // Select Fields
@@ -51,7 +51,7 @@ exports.getFellow = async (req, res, next) => {
   try {
     const fellow = await FellowProfile.findById(req.params.id).populate({
       path: 'user',
-      select: 'name email'
+      select: 'firstName lastName email avatar'
     });
 
     if (!fellow) {
