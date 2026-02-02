@@ -113,7 +113,7 @@ exports.login = async (req, res) => {
   }
 
   try {
-    const user = await User.findOne({ email }).select('+password').populate('guideProfile');
+    const user = await User.findOne({ email }).select('+password');
     if (!user) {
       return res.status(401).json({
         success: false,

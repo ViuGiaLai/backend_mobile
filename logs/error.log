@@ -78,3 +78,18 @@
 2026-01-31 21:22:15 [[31merror[39m]: Forgot password error: next is not a function {
   "stack": "TypeError: next is not a function\n    at model.<anonymous> (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\src\\models\\User.model.js:68:5)\n    at Kareem.execPre (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\kareem\\index.js:63:39)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async model.$__save (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\mongoose\\lib\\model.js:369:5)\n    at async model.save (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\node_modules\\mongoose\\lib\\model.js:609:5)\n    at async exports.forgotPassword (D:\\Downloads\\Fellow4U\\backend_mobile_updated\\backend_mobile\\src\\controllers\\auth.controller.js:188:5)"
 }
+2026-02-02 23:12:07 [[31merror[39m]: SyntaxError: Expected double-quoted property name in JSON at position 66 (line 4 column 1)
+    at JSON.parse (<anonymous>)
+    at parse (D:\LEARN_FLUTTER\backend_api\node_modules\body-parser\lib\types\json.js:74:19)
+    at D:\LEARN_FLUTTER\backend_api\node_modules\body-parser\lib\read.js:163:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (D:\LEARN_FLUTTER\backend_api\node_modules\raw-body\index.js:238:16)
+    at done (D:\LEARN_FLUTTER\backend_api\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\LEARN_FLUTTER\backend_api\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  "url": "/api/v1/login",
+  "method": "POST",
+  "ip": "::1"
+}
