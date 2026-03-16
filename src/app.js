@@ -13,6 +13,7 @@ const tourRoutes = require('./routes/tour.routes');
 const placeRoutes = require('./routes/place.routes');
 const blogRoutes = require('./routes/blog.routes');
 const experienceRoutes = require('./routes/experience.routes');
+const fellowRoutes = require('./routes/fellow.routes');
 
 const app = express();
 
@@ -57,6 +58,7 @@ app.use('/api/v1/tours', tourRoutes);
 app.use('/api/v1/places', placeRoutes);
 app.use('/api/v1/blogs', blogRoutes);
 app.use('/api/v1/experiences', experienceRoutes);
+app.use('/api/v1/fellows', fellowRoutes);
 
 // Error handler
 app.use(errorHandler);

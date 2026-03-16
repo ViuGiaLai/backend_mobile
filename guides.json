@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "65f5e3e3e3e3e3e3e3e3e3e1",
+    "user": {
+      "_id": "65f5e3e3e3e3e3e3e3e3e3e0",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "avatar": "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/avatar1.png"
+    },
+    "bio": "Experienced guide with a passion for exploring Da Nang.",
+    "languages": ["English", "Vietnamese"],
+    "hourlyRate": 25,
+    "city": "Da Nang",
+    "rating": 4.8,
+    "gallery": [
+      "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/gallery1.png",
+      "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/gallery2.png"
+    ],
+    "isAvailable": true,
+    "createdAt": "2024-03-16T10:00:00.000Z"
+  },
+  {
+    "_id": "65f5e3e3e3e3e3e3e3e3e3e3",
+    "user": {
+      "_id": "65f5e3e3e3e3e3e3e3e3e3e2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "avatar": "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/avatar2.png"
+    },
+    "bio": "Local expert in Hoi An, specializing in cultural tours.",
+    "languages": ["English", "Vietnamese", "French"],
+    "hourlyRate": 30,
+    "city": "Hoi An",
+    "rating": 4.9,
+    "gallery": [
+      "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/gallery3.png",
+      "https://res.cloudinary.com/dqe5syxc0/image/upload/v1769696289/gallery4.png"
+    ],
+    "isAvailable": true,
+    "createdAt": "2024-03-15T11:00:00.000Z"
+  }
+]
