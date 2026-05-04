@@ -6,6 +6,10 @@ const TripSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  title: {
+    type: String,
+    required: [true, 'Please add a trip title']
+  },
   destination: {
     type: String,
     required: [true, 'Please add a destination']
@@ -24,10 +28,13 @@ const TripSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  maxBudget: {
-    type: Number
-  },
+  maxBudget: Number,
   requiredLanguages: [String],
+  imageUrl: String,
+  host: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User'
+  },
   status: {
     type: String,
     enum: ['waiting', 'confirmed', 'completed', 'cancelled'],

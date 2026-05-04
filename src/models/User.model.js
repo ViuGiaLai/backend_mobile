@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['traveler', 'guide', 'admin'],
+    enum: ['user', 'traveler', 'guide', 'admin'],
     default: 'traveler'
   },
   isActive: {
@@ -56,9 +56,9 @@ UserSchema.virtual('guideProfile', {
 });
 
 // Mã hóa mật khẩu trước khi lưu
-UserSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function() {
   if (!this.isModified('password')) {
-    next();
+    return;
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);

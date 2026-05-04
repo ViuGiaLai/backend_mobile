@@ -27,6 +27,10 @@ const FellowProfileSchema = new mongoose.Schema({
     min: [1, 'Rating must be at least 1'],
     max: [5, 'Rating must can not be more than 5']
   },
+  reviewCount: {
+    type: Number,
+    default: 0
+  },
   gallery: [String],
   isAvailable: {
     type: Boolean,
