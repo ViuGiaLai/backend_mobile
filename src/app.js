@@ -15,6 +15,7 @@ const blogRoutes = require('./routes/blog.routes');
 const experienceRoutes = require('./routes/experience.routes');
 const fellowRoutes = require('./routes/fellow.routes');
 const chatRoutes = require('./routes/chat.routes');
+const photoRoutes = require('./routes/photo.routes');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use('/api/v1/blogs', blogRoutes);
 app.use('/api/v1/experiences', experienceRoutes);
 app.use('/api/v1/fellows', fellowRoutes);
 app.use('/api/v1/chat', chatRoutes);
+app.use('/api/v1/photos', photoRoutes);
 
 // Error handler
 app.use(errorHandler);
